@@ -5,7 +5,7 @@ int main() {
     int line = 0;
     int SB = 0;
     while (line < 30000) {
-        printf("SB: %d\n", line);
+        printf("ciallo~: %d\n", line);
         line++;
     }
     if (line == 30000) {
