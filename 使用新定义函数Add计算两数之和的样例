@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int Add(float x,float y)
+{
+	float z=0;
+	z=x+y; 
+	return z;
+}
+int main()
+{
+	float T,X,Y;
+	printf("please input'X''Y'\n");
+	scanf("%f %f",&X,&Y);
+	T=Add(X,Y);
+	printf("result is %f",T);
+	return 0;
+}
