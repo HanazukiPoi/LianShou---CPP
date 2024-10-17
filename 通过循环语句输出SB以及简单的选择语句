@@ -9,7 +9,7 @@ int main() {
         line++;
     }
     if (line == 30000) {
-        printf("cnm\n");
+        printf("hello\n");
     }
     printf("gzy帅不帅(Y/N)\n");
     scanf(" %c", &Y); 
@@ -17,13 +17,13 @@ int main() {
         printf("thx\n");
     } else if (Y == 'N'  || Y=='n') {
         while (SB < 1000000) {
-            printf("傻逼\n");
+            printf("铸币\n");
             SB++;
         }
-        printf("NMSL\n");
+        printf("NM\n");
     } else {
 
-        printf("你智商有问题\n");
+        printf("EMMMMM\n");
     }
 
     printf("thanks for your support!\n");
