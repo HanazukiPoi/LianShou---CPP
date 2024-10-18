@@ -1,36 +1,32 @@
 #include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 int main()
 {
-	int a,b;
-	printf("ÐÄÖÐÕæ³ÏÄîÏëÒ»¼þÊÂ£¬²¢¸ù¾ÝµÚÒ»Ó¡ÏóËµ³öÒ»¸öÊý×Ö\nÇëÊäÈëÄãµÄÊý×Ö:");
+	int a;
+	printf("心中真诚念想一件事，并根据第一印象说出一个数字\n请输入你的数字:");
 	scanf("%d",&a);
-	b=a%6;
-	if (b=0)
+	int b=a%6;
+	if (b==0)
 	{
-		printf("\n´ó¼ª\n");
-	}
-	else if (b==1)
+		printf("\n大吉\n");
+	} else if (b==1)
 	{
-		printf("Ð¡Ð×\n"); 
-	}
-	else if (b==2)
+		printf("\n小凶\n"); 
+	} else if (b==2)
 	{
-		printf("ÖÐÆ½\n");
-	}
-	else if (b==3)
+		printf("\n中平\n");
+	} else if (b==3)
 	{
-		printf("ÖÐ¼ª\n");
-	} 
-	else if (b==4){
-		printf("Ð¡¼ª\n");
+		printf("\n中吉\n");
+	} else if (b==4){
+		printf("\n小吉\n");
 		
-	}
-	else 
+	} else if (b==5)
 	{
-	
-		printf("´óÐ×\n\nË«»÷»Ø³µÒÔÍË³ö³ÌÐò\n\n");
+		printf("\n大凶\n");
 	}
+	printf("\n\n");
 	system("pause");
 	return 0;
 }
