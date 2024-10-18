@@ -1,0 +1,215 @@
+#include<stdio.h>
+#include<windows.h>
+#include<math.h>
+#include<stdlib.h>
+#include <iostream>
+#include <sstream>
+int Add(float addx,float addy){
+	float addsum=addx+addy;
+	return addsum;
+}
+int Mul(float mulx,float muly){
+	float mulZ=mulx*muly;
+	return mulZ;
+}
+int Big(float bigx,float bigy,float bigz){
+	float bigR,big1;
+	big1=bigx>bigy ? bigx:bigy;
+	if (big1>bigz){
+		bigR=big1;
+	}
+	else {
+		bigR=bigz;
+	}
+	return bigR;
+}
+int Helen(float HeA,float HeB,float HeC){
+	float HeS=0.5*(HeA+HeB+HeC);
+	float Helen=sqrt(HeS*(HeS-HeA)*(HeS-HeB)*(HeS-HeC));
+	return Helen;
+}
+//以下为求根公式个人自编测试版，无法运行！ 
+//int Root(float rootx,float rooty,float rootz){
+//	float rootR;
+//	float rootDelta=rooty*rooty-4*rootx*rootz;
+//	if (rootDelta<0){
+//	
+//		char rootRT[1]=['该方程无解',/0];
+//	}
+//	else if (rootDelta==0){
+//		rootR=(-2*b+(sqrt(rootDelta)));
+//		char rootR1=char(rootR);
+//		char rootRT[1]=[rootR1,/0];
+//	}
+//	else if (rootDelta>0){
+//		float rootR1=(-2*b+(sqrt(rootDelta)));
+//		char rootR1r=char(rootR1);
+//		float rootR2=(-2*b-(sqrt(rootDelta)));
+//		char rootR2r=char(rootR2);
+//		char rootRT[1]=[rootR1r,rootR2r];
+//		
+//	}
+//	return rootRT;
+//}
+//以下求根公式根据AI生成，暂时具备可行性
+std::string Root1(float rootx, float rooty, float rootz) {
+    float rootDelta = rooty * rooty - 4 * rootx * rootz;
+    std::stringstream ss;
+
+    if (rootDelta < 0) {
+        return "该方程无解";
+    } else if (rootDelta == 0) {
+        float rootR = (-2 * rooty + sqrt(rootDelta)) / (2 * rootx);
+        ss << rootR; // 使用stringstream将浮点数转换为字符串
+    } else {
+        float rootR1 = (-2 * rooty + sqrt(rootDelta)) / (2 * rootx);
+        float rootR2 = (-2 * rooty - sqrt(rootDelta)) / (2 * rootx);
+        ss << rootR1 << " " << rootR2; // 使用stringstream将两个浮点数转换为字符串
+    }
+
+    return ss.str(); // 从stringstream对象获取字符串
+} 
+
+
+
+
+
+
+//下面是主函数
+int main(){
+	Menu:
+	system("cls");
+	int choice,Rchoice;
+	float addA,addB,addC;
+	printf("这里是主菜单，请选择你的算法\n1.加法\n2.乘法\n3.三个数字比大小\n4.海伦-秦九韶公式求三角形面积\n5.二元一次方程求根公式\n");
+	printf("0.stop\n");
+	scanf("%d",&choice);
+	if (choice==1){//加法开始 
+		ADDmenu:
+		system("cls");
+		printf("请输入需要相加的两个数字\n");
+		scanf("%f %f",&addA,&addB);
+		float result1=Add(addA,addB);
+		printf("结果为%f\n",result1);
+		//标准返回指令从这里开始
+		printf("\n输入任意字符继续计算\n输入1继续运算\n输入2返回算法菜单\n输入其他任意字符退出\n");
+		scanf("%d",&Rchoice);
+		if (Rchoice==1){
+			goto ADDmenu;
+		}
+		else if (Rchoice==2){
+			goto Menu ;
+		}
+		else {
+		
+		}//标准返回指令从这里结束
+		
+		
+	}//加法结束 
+	else if (choice==2){//乘法开始 
+		MULmenu:
+		system("cls");
+		float mul1,mul2,mulresult;
+		printf("请输入需要相乘的两个数字\n");
+		scanf("%f %f",&mul1,&mul2);
+		mulresult=Mul(mul1,mul2);
+		printf("计算结果为:%f\n",mulresult);
+		//标准返回指令从这里开始 
+		printf("\n输入1继续运算\n输入2返回算法菜单\n输入其他任意字符退出\n");
+		scanf("%d",&Rchoice);
+		if (Rchoice==1){
+			goto MULmenu;
+		}
+		else if (Rchoice==2){
+			goto Menu ;
+		}
+		else {
+		
+		}//标准返回指令从这里结束 
+		
+	}//乘法结束 
+	else if (choice==3){//比较大小开始 
+		BIGmenu:
+		system("cls");
+		float big1,big2,big3,bigresult;
+		printf("请输入需要比较大小的三个数字\n");
+		scanf("%f %f %f",&big1,&big2,&big3);
+		bigresult=Big(big1,big2,big3);
+		printf("最大的数字是%f\n",bigresult);
+		//标准返回指令从这里开始 
+		printf("\n输入1继续运算\n输入2返回算法菜单\n输入其他任意字符退出\n");
+		scanf("%d",&Rchoice);
+		if (Rchoice==1){
+			goto BIGmenu;
+		}
+		else if (Rchoice==2){
+			goto Menu ;
+		}
+		else {
+		
+		}//标准返回指令从这里结束
+		
+	}//比较大小结束 
+	else if (choice==4){//海伦公式开始 
+	HELENmenu:
+	system("cls");	
+	float helen1,helen2,helen3,helenresult;
+	printf("请输入三角形三边的长度\n");
+	scanf("%f %f %f",&helen1,&helen2,&helen3);
+	helenresult=Helen(helen1,helen2,helen3);
+	printf("该三角形的面积为%f\n",helenresult);
+		//标准返回指令从这里开始 
+		printf("\n输入1继续运算\n输入2返回算法菜单\n输入其他任意字符退出\n");
+		scanf("%d",&Rchoice);
+		if (Rchoice==1){
+			goto HELENmenu;
+		}
+		else if (Rchoice==2){
+			goto Menu ;
+		}
+		else {
+		
+		}//标准返回指令从这里结束	
+	}
+	else if (choice==5){
+		ROOTmenu:
+		system("cls");
+		float roota,rootb,rootc;
+		printf("请输入二元一次方程对应的a,b,c的值：");
+		scanf("%f %f %f",&roota,&rootb,&rootc);
+		std::string result = Root1(roota,rootb ,rootc );
+    	std::cout << result << std::endl;
+		//标准返回指令从这里开始 
+		printf("\n输入1继续运算\n输入2返回算法菜单\n输入其他任意字符退出\n");
+		scanf("%d",&Rchoice);
+		if (Rchoice==1){
+			goto ROOTmenu;
+		}
+		else if (Rchoice==2){
+			goto Menu ;
+		}
+		else {
+		
+		}//标准返回指令从这里结束
+    	
+		
+	}
+	
+////求根公式正在开发中！！！ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//输入0以结束菜单 
+	else if (choice==0){
+		
+	}
+	system("pause");
+	return 0;
+}
+ 
