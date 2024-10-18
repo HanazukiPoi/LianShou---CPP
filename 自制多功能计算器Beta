@@ -83,6 +83,7 @@ int main(){
 	float addA,addB,addC;
 	printf("这里是主菜单，请选择你的算法\n1.加法\n2.乘法\n3.三个数字比大小\n4.海伦-秦九韶公式求三角形面积\n5.二元一次方程求根公式\n");
 	printf("0.stop\n");
+	printf("\n\n\n更多功能绝赞开發中！！！\n"); 
 	scanf("%d",&choice);
 	if (choice==1){//加法开始 
 		ADDmenu:
@@ -209,7 +210,7 @@ int main(){
 	else if (choice==0){
 		
 	}
-	system("pause");
+
 	return 0;
 }
  
