@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int a,b;
+	printf("ÐÄÖÐÕæ³ÏÄîÏëÒ»¼þÊÂ£¬²¢¸ù¾ÝµÚÒ»Ó¡ÏóËµ³öÒ»¸öÊý×Ö\nÇëÊäÈëÄãµÄÊý×Ö:");
+	scanf("%d",&a);
+	b=a%6;
+	if (b=0)
+	{
+		printf("\n´ó¼ª\n");
+	}
+	else if (b==1)
+	{
+		printf("Ð¡Ð×\n"); 
+	}
+	else if (b==2)
+	{
+		printf("ÖÐÆ½\n");
+	}
+	else if (b==3)
+	{
+		printf("ÖÐ¼ª\n");
+	} 
+	else if (b==4){
+		printf("Ð¡¼ª\n");
+		
+	}
+	else 
+	{
+	
+		printf("´óÐ×\n\nË«»÷»Ø³µÒÔÍË³ö³ÌÐò\n\n");
+	}
+	system("pause");
+	return 0;
+}
