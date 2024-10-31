@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+int main(){
+	start:
+	system("cls");
+	srand(time(NULL));
+	printf("请输入您预期数的取值范围(lim max)\n");
+	int lim,max; 
+	scanf("%d %d",&lim,&max);
+	int answer=rand()%max+lim;
+	int counter,chance,i=0;
+	printf("请输入您设定的机会次数\n");
+	scanf("%d",&counter);
+	printf("\nanswer=%d,max=%d,lim=%d,counter=%d\n",answer,max,lim,counter);
+	do{
+		printf("请尝试输入您的答案:");
+		scanf("%d",&chance);
+		i++;
+		if (chance<answer){
+			printf("您输入的数字太小了！  剩余 挑战机会:%d\n",counter-i);
+		}
+		else if (chance>answer){
+			printf("您输入的数字太大了！  剩余 挑战机会:%d\n",counter-i);
+		}
+		else if (chance==answer){
+			printf("答案正确，太厉害了！  您仅用了%d次机会就猜中了答案！\n",i);
+			break;
+		}
+		if (i==counter){
+			printf("您已用尽所有挑战机会,挑战失败\n");
+			break;
+		}
+	}while(chance!=answer||i<=counter);
+	printf("\n\n是否重新挑战？(y/n)");
+	char restart;
+	scanf("%s",&restart);
+	if(restart=='y'){
+		goto start;
+	}
+	else{
+		printf("感谢您的游玩");
+	}
+	return 0;
+}
